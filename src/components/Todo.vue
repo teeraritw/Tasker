@@ -2,9 +2,9 @@
     <div id='todo'>
         <nav id='navbar'>
             <ul>
-                <li><router-link to='/'>LOGO</router-link></li>
+                <li><router-link to='/'><img class='logo' src='../assets/tasker_logo.png' alt='LOGO'></router-link></li>
                 <div>
-                    <li><router-link to='/'>SIGNOUT</router-link></li>
+                    <li><router-link to='/'>Signout</router-link></li>
                     <li>
                         <router-link to='/'>
                             <div class='circle'>
@@ -32,29 +32,36 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+$navbarHeight: 60px;
+
 a {
     color: #444;
     text-decoration: none;
+    transition: opacity 0.5s;
+
+    &:hover {
+        opacity: 0.5;
+    }
 }
 
 #navbar {
     margin: 0;
     background: #fff;
     width: 100%;
-    height: 60px;
+    height: $navbarHeight;
 
     ul {
         margin: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5px;
+        height: 100%;
     }
 
     li {
         display: inline-block;
         vertical-align: middle;
-        margin-left: 10px;
+        margin: 0 10px;
 
         div.circle {
             width: 50px;
@@ -65,11 +72,15 @@ a {
             span {
                 position: absolute;
                 top: 13px;
-                left: 19px;
+                left: 20px;
                 font-size: 18px;
             }
         }
     }
+}
+
+.logo {
+    height: $navbarHeight - 10;
 }
 
 .circle {
