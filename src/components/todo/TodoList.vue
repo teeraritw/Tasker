@@ -49,22 +49,22 @@ export default {
     height: 100%;
     background: -webkit-linear-gradient(
         rgba(255,255,255,0) 0%,
-        rgba(255,255,255, 0.3) 85%,
+        rgba(255,255,255, 0) 85%,
         rgba(255,255,255,1) 100%
     );
     background: -o-linear-gradient(
         rgba(255,255,255,0) 0%,
-        rgba(255,255,255, 0.3) 85%,
+        rgba(255,255,255, 0) 85%,
         rgba(255,255,255,1) 100%
     );
     background: -moz-linear-gradient(
         rgba(255,255,255,0) 0%,
-        rgba(255,255,255, 0.3) 85%,
+        rgba(255,255,255, 0) 85%,
         rgba(255,255,255,1) 100%
     );
     background: linear-gradient(
         rgba(255,255,255,0) 0%,
-        rgba(255,255,255, 0.3) 85%,
+        rgba(255,255,255, 0) 85%,
         rgba(255,255,255,1) 100%
     );
 }
