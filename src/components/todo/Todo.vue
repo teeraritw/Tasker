@@ -47,7 +47,7 @@ export default {
     }
 
     div > h2 {
-        font-size: 30px;
+        font-size: 36px;
         position: relative;
         top: 30px;
         left: 20px;

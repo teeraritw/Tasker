@@ -69,14 +69,8 @@ $navbarHeight: 60px;
     }
 }
 
-.sticky {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-}
-
 a {
-    color: #7b7b7b;
+    color: #222;
     text-decoration: none;
     transition: opacity 0.5s;
 

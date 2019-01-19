@@ -1,3 +1,3 @@
 # tasker
 
-Track todos in seconds.
+Track your todos in seconds.
