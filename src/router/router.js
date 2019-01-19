@@ -1,4 +1,4 @@
-import Todo from '../components/Todo.vue';
+import Todo from '../components/todo/Todo.vue';
 
 export default [
     { path: '/', component: Todo }
