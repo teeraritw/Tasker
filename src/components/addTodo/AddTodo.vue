@@ -73,9 +73,9 @@ export default {
         padding: 10px;
         border-radius: 15px;
 
-        -webkit-transition: -webkit-box-shadow 0.3s;
-        -o-transition: box-shadow 0.3s;
-        transition: box-shadow 0.3s;
+        -webkit-transition: -webkit-box-shadow 0.2s;
+        -o-transition: box-shadow 0.2s;
+        transition: box-shadow 0.2s;
     }
     input[type=text] {
         border: 0;
@@ -91,7 +91,7 @@ export default {
         cursor: pointer;
         font-size: 20px;
         width: 150px;
-        
+
         &:hover {
             background: #444;
         }
