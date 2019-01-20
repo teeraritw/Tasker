@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
