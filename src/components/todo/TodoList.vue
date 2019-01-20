@@ -9,7 +9,7 @@
                 <p><span class='darkerText'>Post date:</span> {{ todo.date }}</p>
             </li>
         </ul>
-        <button><router-link to='/todos' exact>READ MORE</router-link></button>
+        <router-link to='/todos' exact><button>READ MORE</button></router-link>
     </div>
 </template>
 
