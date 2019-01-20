@@ -80,10 +80,6 @@ a {
     }
 }
 
-a.textLink {
-    margin: 0 20px;
-}
-
 .logo {
     height: $navbarHeight - 10;
 }
