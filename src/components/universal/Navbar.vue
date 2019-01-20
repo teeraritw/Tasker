@@ -6,7 +6,7 @@
       </li>
       <div>
         <li>
-            <router-link class='textLink' to='/addTodo' exact>Create</router-link>
+            <router-link class='textLink' to='/add' exact>Create</router-link>
             <router-link class='textLink' to='/' exact>Sign Out</router-link>
         </li>
         <li>
