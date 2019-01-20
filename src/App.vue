@@ -31,6 +31,7 @@ body, html {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   color: #666;
   max-width: 100%;
+  overflow-x: hidden;
   background: #ffaa00;
 }
 </style>

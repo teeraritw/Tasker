@@ -3,7 +3,7 @@
         <div id='fadeList'></div>
         <ul>
             <li v-for='todo in simplifiedTodos'>
-                <h2>{{ todo.title }}</h2>
+                <h2>{{ todo.title | snippetTitle }}</h2>
                 <p class='description'>{{ todo.description | snippet }}</p>
                 <p><span class='darkerText'>Author:</span> {{ todo.author }}</p>
                 <p><span class='darkerText'>Post date:</span> {{ todo.date }}</p>

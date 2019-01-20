@@ -4,18 +4,10 @@ import VueRouter from 'vue-router';
 
 import Routes from './router/router';
 import store from './store/store';
+import filter from './addons/filters';
 
 // Vue's addons
 Vue.use(VueRouter);
-
-// Filters
-Vue.filter('snippet', function(val) {
-  if(val.length > 100) {
-    return val.slice(0, 100) + '...';
-  } else {
-  return val;
-  }
-});
 
 const router = new VueRouter({
   mode: 'history',
