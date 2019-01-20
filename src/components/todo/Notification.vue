@@ -1,5 +1,5 @@
 <template>
-    <div id='profile'>
+    <div id='notification'>
     </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-#profile {
+#notification {
     width: 800px;
     height: 300px;
     background: #fff;

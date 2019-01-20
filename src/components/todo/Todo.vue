@@ -7,8 +7,8 @@
                 <TodoList></TodoList>
             </div>
             <div>
-                <h2 class='header'>PROFILE</h2>
-                <Profile></Profile>
+                <h2 class='header'>NOTIFICATION</h2>
+                <Notification></Notification>
             </div>        
         </div>
     </div>
@@ -16,14 +16,14 @@
 
 <script>
 import TodoList from './TodoList.vue';
-import Profile from './Profile.vue';
+import Notification from './Notification.vue';
 import Navbar from '../Navbar.vue';
 
 export default {
     components: {
         Navbar,
         TodoList,
-        Profile
+        Notification
     },
     data() {
         return {
