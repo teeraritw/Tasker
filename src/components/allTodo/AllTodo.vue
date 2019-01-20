@@ -67,6 +67,9 @@ ul {
             position: absolute;
             opacity: 0.5;
             top: 30px;
+            -moz-transform: rotateZ(30deg);
+            -o-transform: rotateZ(30deg);
+            -webkit-transform: rotateZ(30deg);
             transform: rotateZ(30deg);
             right: 25px;
             width: 100px;
