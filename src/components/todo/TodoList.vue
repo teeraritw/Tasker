@@ -2,20 +2,18 @@
     <div id='todoList'>
         <div id='fadeList'></div>
         <ul>
-            <li v-for='todo in todos'>
+            <li v-for='todo in simplifiedTodos'>
                 <h2>{{ todo.title }}</h2>
                 <p class='description'>{{ todo.description | snippet }}</p>
                 <p><span class='darkerText'>Author:</span> {{ todo.author }}</p>
                 <p><span class='darkerText'>Post date:</span> {{ todo.date }}</p>
             </li>
         </ul>
-        <button>READ MORE</button>
+        <button><router-link to='/todos' exact>READ MORE</router-link></button>
     </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
 export default {
     data() {
         return {
@@ -23,23 +21,19 @@ export default {
         };
     },
     computed: {
-        ...mapState([
-            'todos'
-        ])
-    },
-    filters: {
-        snippet(val) {
-            if (val.length > 100) {
-                return val.slice(0, 100) + '...';
-            } else {
-                return val;
-            }
+        simplifiedTodos() {
+            return this.$store.state.todos.slice(0,4);
         }
     }
 }
 </script>
 
 <style scoped lang='scss'>
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
 
 #fadeList {
     position: absolute;

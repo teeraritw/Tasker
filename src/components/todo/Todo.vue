@@ -1,6 +1,5 @@
 <template>
     <div id='todo'>
-        <Navbar></Navbar>
         <div id='todoComponents'>
             <div>
                 <h2 class='header'>TODO LIST</h2>
@@ -17,11 +16,9 @@
 <script>
 import TodoList from './TodoList.vue';
 import Notification from './Notification.vue';
-import Navbar from '../Navbar.vue';
 
 export default {
     components: {
-        Navbar,
         TodoList,
         Notification
     },
