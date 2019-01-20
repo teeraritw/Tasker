@@ -2,14 +2,15 @@
   <nav id='navbar'>
     <ul>
       <li>
-        <router-link to='/'><img class='logo' src='../assets/tasker_logo.png' alt='LOGO'></router-link>
+        <router-link to='/' exact><img class='logo' src='../../assets/tasker_logo.png' alt='LOGO'></router-link>
       </li>
       <div>
         <li>
-          <router-link to='/'>Sign Out</router-link>
+            <router-link class='textLink' to='/addTodo' exact>Create</router-link>
+            <router-link class='textLink' to='/' exact>Sign Out</router-link>
         </li>
         <li>
-          <router-link to='/'>
+          <router-link to='/' exact>
             <div class='circle'>
               <span>F</span>
             </div>
@@ -77,6 +78,10 @@ a {
     &:hover {
         opacity: 0.5;
     }
+}
+
+a.textLink {
+    margin: 0 20px;
 }
 
 .logo {
