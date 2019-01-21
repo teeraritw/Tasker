@@ -19,7 +19,7 @@ const store = new Vuex.Store({
     },
     mutations: {
         updateTodo(state) {
-            db.collection('todos').onSnapshot(function (todos) {
+            db.collection('todos').orderBy('negativeTime').onSnapshot(function (todos) {
                 var newTodos = [];
 
                 if (todos.docs.length > 0) {

@@ -31,18 +31,22 @@ export default {
         return {
             todo: {
                 title: '',
-                description: ''
+                description: '',
+                date: ''
             },
             submitted: false
         };
     },
     methods: {
         postTodo() {
+            this.date = new Date();
+
             db.collection('todos').add({
                 title: this.todo.title,
                 description: this.todo.description,
                 author: 'Fester',
-                date: new Date().toLocaleTimeString('en-US') + ' - ' + new Date().toLocaleDateString('en-US')
+                date: this.date.toLocaleTimeString('en-US') + ' - ' + this.date.toLocaleDateString('en-US'),
+                negativeTime: -(this.date.getTime())
             });
             this.submitted = true;
         }
