@@ -42,16 +42,14 @@ export default {
 }
 
 #allTodo {
-    width: 960px;
+    width: 800px;
     box-sizing: border-box;
     min-height: 50px;
-    background: #fff;
 }
 
 h2.header {
     font-size: 36px;
     position: relative;
-    right: 390px;
     top: 30px;
 }
 
@@ -62,8 +60,9 @@ ul {
         position: relative;
         background: #fff;
         padding: 30px;
-        margin: 30px 0;
+        margin: 10px 0;
         overflow: hidden;
+        height: 200px;
 
         img {
             position: absolute;
