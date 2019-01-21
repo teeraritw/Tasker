@@ -16,7 +16,7 @@ export default {
     data() {
         return {
             id: this.$route.params.id,
-            todo: {}
+            todo: null
         };
     },
     created() {
