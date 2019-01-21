@@ -89,6 +89,9 @@ ul {
 
     p.description {
         margin: 10px 0;
+        width: 90%;
+        word-wrap: break-word;
+        -ms-word-wrap: break-word;
     }
 }
 

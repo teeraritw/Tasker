@@ -42,7 +42,7 @@ export default {
                 title: this.todo.title,
                 description: this.todo.description,
                 author: 'Fester',
-                date: new Date().toLocaleDateString()
+                date: new Date().toLocaleTimeString('en-US') + ' - ' + new Date().toLocaleDateString('en-US')
             });
             this.submitted = true;
         }
