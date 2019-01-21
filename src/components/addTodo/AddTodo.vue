@@ -2,15 +2,18 @@
     <div id='addTodo'>
         <div id='addForm'>
             <h2 class='header'>CREATE <span>YOUR</span> TODO</h2>
-            <form>
+
+            <p v-if='submitted'>Your todo has been created! You can check it out <router-link to='/todos' exact>here</router-link></p>
+            
+            <form v-if='!submitted' v-on:submit.prevent='postTodo'>
                 <ul>
                     <li>
                         <label for='titleInput'>Title: </label>
-                        <input id='titleInput' type='text' placeholder="Todo's Title" required/>
+                        <input id='titleInput' type='text' v-model='todo.title' placeholder="Todo's Title" required/>
                     </li>
                     <li>
                         <label for='descriptionInput'>Description: </label>
-                        <textarea id='descriptionInput' placeholder="Todo's Description" required></textarea>
+                        <textarea id='descriptionInput' v-model='todo.description' placeholder="Todo's Description" required></textarea>
                     </li>
                 </ul>
 
@@ -21,15 +24,37 @@
 </template>
 
 <script>
+import db from '../../config/firebaseConfig';
+
 export default {
     data() {
         return {
+            todo: {
+                title: '',
+                description: ''
+            },
+            submitted: false
         };
+    },
+    methods: {
+        postTodo() {
+            db.collection('todos').add({
+                title: this.todo.title,
+                description: this.todo.description,
+                author: 'Fester'
+            });
+            this.submitted = true;
+        }
     }
 }
 </script>
 
 <style scoped lang='scss'>
+
+a {
+    color: #444;
+}
+
 #addTodo {
     margin-top: 100px;
     display: flex;
@@ -127,5 +152,9 @@ ul {
     span {
         font-weight: bold;
     }
+}
+
+p {
+    text-align: center;
 }
 </style>

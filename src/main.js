@@ -6,7 +6,6 @@ import Routes from './router/router';
 import store from './store/store';
 import filter from './addons/filters';
 
-// Vue's addons
 Vue.use(VueRouter);
 
 const router = new VueRouter({
