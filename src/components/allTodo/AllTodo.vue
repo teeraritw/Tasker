@@ -30,6 +30,9 @@ export default {
         ...mapState([
             'todos'
         ])
+    },
+    mounted() {
+        this.$store.dispatch('getTodo');
     }
 }
 </script>
@@ -44,6 +47,8 @@ export default {
 #allTodo {
     width: 960px;
     box-sizing: border-box;
+    min-height: 50px;
+    background: #fff;
 }
 
 h2.header {
