@@ -3,7 +3,7 @@
         <h2 class='header'>ALL TODOS</h2>
         <div id='allTodo'>
             <ul>
-                <li v-for='todo in todos'>
+                <li v-for='todo in getTodos'>
                     <h2>{{ todo.title | snippetTitle }}</h2>
                     <p class='description'>{{ todo.description | snippet }}</p>
                     <p>Posted by: {{ todo.author }}</p>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
     components: {
@@ -27,12 +27,9 @@ export default {
         };
     },
     computed: {
-        ...mapState([
-            'todos'
+        ...mapGetters([
+            'getTodos'
         ])
-    },
-    mounted() {
-        this.$store.dispatch('getTodo');
     }
 }
 </script>

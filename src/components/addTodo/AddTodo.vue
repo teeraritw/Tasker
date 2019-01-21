@@ -41,7 +41,8 @@ export default {
             db.collection('todos').add({
                 title: this.todo.title,
                 description: this.todo.description,
-                author: 'Fester'
+                author: 'Fester',
+                date: new Date().toLocaleDateString()
             });
             this.submitted = true;
         }

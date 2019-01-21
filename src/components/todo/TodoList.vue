@@ -2,7 +2,7 @@
     <div id='todoList'>
         <div id='fadeList'></div>
         <ul>
-            <li v-for='todo in simplifiedTodos'>
+            <li v-for='todo in getSimplifiedTodos'>
                 <h2>{{ todo.title | snippetTitle }}</h2>
                 <p class='description'>{{ todo.description | snippet }}</p>
                 <p><span class='darkerText'>Author:</span> {{ todo.author }}</p>
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     data() {
         return {
@@ -21,9 +23,9 @@ export default {
         };
     },
     computed: {
-        simplifiedTodos() {
-            return this.$store.state.todos.slice(0,4);
-        }
+        ...mapGetters([
+            'getSimplifiedTodos'
+        ])
     }
 }
 </script>

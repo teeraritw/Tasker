@@ -7,20 +7,34 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        todos: [
+        todos: []
+    },
+    getters: {
+        getTodos(state) {
+            return state.todos;
+        },
+        getSimplifiedTodos(state) {
+            return state.todos.slice(0,4);
+        }
+    },
+    mutations: {
+        updateTodo(state) {
+            db.collection('todos').onSnapshot(function (todos) {
+                var newTodos = [];
 
-        ]
+                if (todos.docs.length > 0) {
+                    todos.docs.forEach((doc, index) => {
+                        newTodos.push(doc.data());
+                        newTodos[index].id = doc.id;
+                    });
+                    state.todos = newTodos;
+                }
+            });
+        }
     },
     actions: {
         getTodo(context) {
-            db.collection('todos').get().then(function(todos) {
-                todos.docs.forEach((doc, index) => {
-                    context.state.todos.push(doc.data());
-                    context.state.todos[index].id = doc.id;
-                });
-
-                console.log(context.state.todos);
-            });
+            context.commit('updateTodo');
         }
     }
 });
