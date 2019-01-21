@@ -3,7 +3,7 @@
         <h2 class='header'>ALL TODOS</h2>
         <div id='allTodo'>
             <ul>
-                <li v-for='todo in todos'>
+                <li v-for='todo in getTodos'>
                     <h2>{{ todo.title | snippetTitle }}</h2>
                     <p class='description'>{{ todo.description | snippet }}</p>
                     <p>Posted by: {{ todo.author }}</p>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
     components: {
@@ -27,8 +27,8 @@ export default {
         };
     },
     computed: {
-        ...mapState([
-            'todos'
+        ...mapGetters([
+            'getTodos'
         ])
     }
 }
@@ -42,14 +42,14 @@ export default {
 }
 
 #allTodo {
-    width: 960px;
+    width: 800px;
     box-sizing: border-box;
+    min-height: 50px;
 }
 
 h2.header {
     font-size: 36px;
     position: relative;
-    right: 390px;
     top: 30px;
 }
 
@@ -60,8 +60,9 @@ ul {
         position: relative;
         background: #fff;
         padding: 30px;
-        margin: 30px 0;
+        margin: 10px 0;
         overflow: hidden;
+        height: 200px;
 
         img {
             position: absolute;
@@ -88,6 +89,9 @@ ul {
 
     p.description {
         margin: 10px 0;
+        width: 90%;
+        word-wrap: break-word;
+        -ms-word-wrap: break-word;
     }
 }
 

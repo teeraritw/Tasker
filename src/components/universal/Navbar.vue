@@ -6,7 +6,8 @@
       </li>
       <div>
         <li>
-          <router-link to='/' exact>Sign Out</router-link>
+            <router-link class='textLink' to='/add' exact>Create</router-link>
+            <router-link class='textLink' to='/' exact>Sign Out</router-link>
         </li>
         <li>
           <router-link to='/' exact>
@@ -77,6 +78,10 @@ a {
     &:hover {
         opacity: 0.5;
     }
+}
+
+.textLink {
+    margin: 0 10px;
 }
 
 .logo {
