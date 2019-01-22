@@ -1,5 +1,5 @@
 <template>
-    <div id='signUp'>
+    <div id='signOut'>
         <h2>Are you sure you wanna sign out?</h2>
     </div>
 </template>

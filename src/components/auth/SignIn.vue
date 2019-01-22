@@ -1,5 +1,5 @@
 <template>
-    <div id='signUp'>
+    <div id='signIn'>
         <h2>It's me "Sign In" component!</h2>
     </div>
 </template>
