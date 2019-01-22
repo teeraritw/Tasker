@@ -9,13 +9,13 @@
             <router-link class='textLink' to='/add' exact>Create</router-link>
         </li>
         <li>
-            <router-link class='textLink' to='/' exact>Sign Out</router-link>
+            <p class='textLink' v-on:click='setCurrentTab("SignOut")'>Sign Out</p>
         </li>
         <li>
-            <router-link class='textLink' to='/' exact>Sign Up</router-link>
+            <p class='textLink' v-on:click='setCurrentTab("SignUp")'>Sign Up</p>
         </li>
         <li>
-            <router-link class='textLink' to='/' exact>Sign In</router-link>
+            <p class='textLink' v-on:click='setCurrentTab("SignIn")'>Sign In</p>
         </li>
         <li>
           <router-link to='/' exact>
@@ -35,6 +35,11 @@ export default {
         return {
 
         };
+    },
+    methods: {
+        setCurrentTab(newTab) {
+            this.$store.dispatch('setCurrentTab', newTab)
+        }
     }
 };
 </script>
@@ -81,7 +86,16 @@ $navbarHeight: 60px;
 a {
     color: #222;
     text-decoration: none;
+}
 
+.textLink {
+    color: #222;
+    margin: 0 10px;
+
+    cursor: pointer;
+}
+
+a, .textLink {
     -o-transition: opacity 0.3s;
     -moz-transition: opacity 0.3s;
     -webkit-transition: opacity 0.3s;
@@ -90,10 +104,6 @@ a {
     &:hover {
         opacity: 0.5;
     }
-}
-
-.textLink {
-    margin: 0 10px;
 }
 
 .logo {

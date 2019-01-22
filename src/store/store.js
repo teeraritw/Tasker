@@ -7,7 +7,8 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        todos: []
+        todos: [],
+        currentTab: ''
     },
     getters: {
         getTodos(state) {
@@ -15,6 +16,9 @@ const store = new Vuex.Store({
         },
         getSimplifiedTodos(state) {
             return state.todos.slice(0,4);
+        },
+        getCurrentTab(state) {
+            return state.currentTab;
         }
     },
     mutations: {
@@ -30,11 +34,18 @@ const store = new Vuex.Store({
                     state.todos = newTodos;
                 }
             });
+        },
+        updateCurrentTab(state, newTab) {
+            state.currentTab = newTab;
         }
     },
     actions: {
         getTodo(context) {
             context.commit('updateTodo');
+        },
+        setCurrentTab(context, newTab) {
+            console.log(context.state.currentTab);
+            context.commit('updateCurrentTab', newTab);
         }
     }
 });
