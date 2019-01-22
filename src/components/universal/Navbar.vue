@@ -73,7 +73,11 @@ $navbarHeight: 60px;
 a {
     color: #222;
     text-decoration: none;
-    transition: opacity 0.5s;
+
+    -o-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
 
     &:hover {
         opacity: 0.5;
