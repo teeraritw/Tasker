@@ -3,10 +3,12 @@
         <div id='fadeList'></div>
         <ul>
             <li v-for='todo in getSimplifiedTodos'>
-                <h2>{{ todo.title | snippetTitle }}</h2>
-                <p class='description'>{{ todo.description | snippet }}</p>
-                <p><span class='darkerText'>Author:</span> {{ todo.author }}</p>
-                <p><span class='darkerText'>Post date:</span> {{ todo.date }}</p>
+                <router-link v-bind:to='"/todos/" + todo.id'>
+                    <h2>{{ todo.title | snippetTitle }}</h2>
+                    <p class='description'>{{ todo.description | snippet }}</p>
+                    <p><span class='darkerText'>Author:</span> {{ todo.author }}</p>
+                    <p><span class='darkerText'>Post date:</span> {{ todo.date }}</p>
+                </router-link>
             </li>
         </ul>
         <router-link to='/todos' exact><button>READ MORE</button></router-link>
@@ -43,6 +45,7 @@ a {
     left:0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
     background: -webkit-linear-gradient(
         rgba(255,255,255,0) 0%,
         rgba(255,255,255, 0) 85%,
@@ -105,6 +108,10 @@ li {
     margin: 20px 0;
     padding-bottom: 30px;
     border-bottom: 1px solid #222;
+
+    &:hover {
+        opacity: 0.7;
+    }
 
     h2 {
         color: #222;
