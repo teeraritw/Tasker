@@ -36,12 +36,14 @@ export default {
 #todoWrapper {
     background: #fff;
     padding: 30px;
-    margin: 10px auto;
+    margin: 0 auto;
+    margin-top: 80px;
     width: 800px;
     min-height: 200px;
 }
 
 h2 {
+    margin: 15px 0 30px 0;
     color: #444;
     font-size: 30px;
 }
