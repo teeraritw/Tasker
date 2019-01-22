@@ -8,7 +8,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         todos: [],
-        currentTab: ''
+        currentTab: null
     },
     getters: {
         getTodos(state) {
@@ -44,7 +44,6 @@ const store = new Vuex.Store({
             context.commit('updateTodo');
         },
         setCurrentTab(context, newTab) {
-            console.log(context.state.currentTab);
             context.commit('updateCurrentTab', newTab);
         }
     }

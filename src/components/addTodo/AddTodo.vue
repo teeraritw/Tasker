@@ -103,6 +103,7 @@ a {
         padding: 10px;
         border-radius: 15px;
 
+        -moz-transition: box-shadow 0.2s;
         -webkit-transition: -webkit-box-shadow 0.2s;
         -o-transition: box-shadow 0.2s;
         transition: box-shadow 0.2s;
@@ -126,19 +127,6 @@ a {
             background: #444;
         }
     }
-}
-
-:-ms-input-placeholder {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-}
-:-moz-placeholder {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-}
-::-webkit-input-placeholder {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-}
-::placeholder {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
 ul {

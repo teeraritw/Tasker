@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         setCurrentTab(newTab) {
-            this.$store.dispatch('setCurrentTab', newTab)
+            this.$store.dispatch('setCurrentTab', newTab);
         }
     }
 };

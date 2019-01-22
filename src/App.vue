@@ -2,9 +2,9 @@
   <div id="app">
     <Navbar></Navbar>
 
-    <keep-alive>
-      <component v-bind:is='getCurrentTab'></component>
-    </keep-alive>
+    <transition name="fade" mode='out-in'>
+        <component v-bind:is='getCurrentTab'></component>
+    </transition>
 
     <router-view></router-view>
   </div>
@@ -46,6 +46,17 @@ export default {
   box-sizing: border-box;
 }
 
+.fade-enter-active, .fade-leave-active {
+  -o-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
@@ -57,5 +68,26 @@ body, html {
   max-width: 100%;
   overflow-x: hidden;
   background: #ffaa00;
+}
+
+button {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+:-ms-input-placeholder {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+:-moz-placeholder {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+::-webkit-input-placeholder {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+::placeholder {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 </style>
