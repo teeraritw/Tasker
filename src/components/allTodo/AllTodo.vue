@@ -4,7 +4,7 @@
         <div id='allTodo'>
             <ul>
                 <li v-for='todo in getTodos'>
-                    <h2>{{ todo.title | snippetTitle }}</h2>
+                    <router-link v-bind:to='"/todos/" + todo.id'><h2>{{ todo.title | snippetTitle }}</h2></router-link>
                     <p class='description'>{{ todo.description | snippet }}</p>
                     <p>Posted by: {{ todo.author }}</p>
                     <p>Date: {{ todo.date }}</p>
@@ -53,6 +53,10 @@ h2.header {
     top: 30px;
 }
 
+a {
+    text-decoration: none;
+}
+
 ul {
     list-style-type: none;
 
@@ -81,6 +85,10 @@ ul {
         font-size: 38px;
         margin: 0;
         color: #444;
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
 
     p {
