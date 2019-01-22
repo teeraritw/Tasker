@@ -2,7 +2,7 @@
   <div id="app">
     <Navbar></Navbar>
 
-    <transition name="fade" mode='out-in'>
+    <transition name="fade">
         <component v-bind:is='getCurrentTab'></component>
     </transition>
 
@@ -17,6 +17,7 @@ import SignIn from './components/auth/SignIn.vue';
 import SignOut from './components/auth/SignOut.vue';
 
 import { mapGetters } from 'vuex';
+import styles from './styles/styles.scss';
 
 export default {
   name: 'app',
@@ -42,52 +43,4 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
-}
-
-.fade-enter-active, .fade-leave-active {
-  -o-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-  -webkit-transition: opacity 0.2s;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-}
-
-body, html {
-  margin: 0;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  color: #666;
-  max-width: 100%;
-  overflow-x: hidden;
-  background: #ffaa00;
-}
-
-button {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-
-  &:focus {
-    outline: 0;
-  }
-}
-
-:-ms-input-placeholder {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-}
-:-moz-placeholder {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-}
-::-webkit-input-placeholder {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-}
-::placeholder {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-}
 </style>

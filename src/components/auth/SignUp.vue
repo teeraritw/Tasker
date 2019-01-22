@@ -2,8 +2,10 @@
     <div id='signUp'>
         <form id='signUpForm'>
             <button class='exit' v-on:click.prevent='setCurrentTab(null)'>X</button>
-            <h2>SIGN UP</h2>
             <ul>
+                <li>
+                    <h2>SIGN UP</h2>
+                </li>
                 <li>
                     <label for='usernameInput'>Username:</label>
                     <input id='usernameInput' type='text' placeholder="Username" />
@@ -59,34 +61,16 @@ export default {
         cursor: pointer;
     }
 
-    button.exit {
-        position: absolute;
-        right: -20px;
-        top: -15px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 0;
-        color: #fff;
-        background: #555;
-        border: 5px solid #fff;
-        -webkit-box-shadow: 0 0 2px #000;
-        box-shadow: 0 0 2px #000;
-
-        &:hover {
-            background: #444;
-        }
-    }
-
     ul {
         list-style-type: none;
         margin: 0 auto;
         width: 500px;
+        text-align: center;
+        padding: 0;
     }
 
     li {
         margin: 20px 0;
-        text-align: center;
 
         label {
             display: inline-block;
