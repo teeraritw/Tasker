@@ -4,10 +4,18 @@
       <li>
         <router-link to='/' exact><img class='logo' src='../../assets/tasker_logo.png' alt='LOGO'></router-link>
       </li>
-      <div>
+      <ul>
         <li>
             <router-link class='textLink' to='/add' exact>Create</router-link>
+        </li>
+        <li>
             <router-link class='textLink' to='/' exact>Sign Out</router-link>
+        </li>
+        <li>
+            <router-link class='textLink' to='/' exact>Sign Up</router-link>
+        </li>
+        <li>
+            <router-link class='textLink' to='/' exact>Sign In</router-link>
         </li>
         <li>
           <router-link to='/' exact>
@@ -16,7 +24,7 @@
             </div>
           </router-link>
         </li>
-      </div>
+      </ul>
     </ul>
   </nav>
 </template>
