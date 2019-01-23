@@ -1,6 +1,6 @@
 <template>
     <div id='signUp' class='auth'>
-        <form v-on:submit.prevent='signIn' id='signUpForm' class='authForm'>
+        <form v-on:submit.prevent='signUp' id='signUpForm' class='authForm'>
             <button class='exit' v-on:click.prevent='setCurrentTab(null)'>X</button>
             <ul>
                 <li>
