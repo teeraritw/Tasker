@@ -1,6 +1,6 @@
 <template>
     <div id='signUp' class='auth'>
-        <form v-on:submit='' id='signUpForm' class='authForm'>
+        <form v-on:submit.prevent='signIn' id='signUpForm' class='authForm'>
             <button class='exit' v-on:click.prevent='setCurrentTab(null)'>X</button>
             <ul>
                 <li>
@@ -8,11 +8,11 @@
                 </li>
                 <li>
                     <label for='emailInput'>Email:</label>
-                    <input id='emailInput' type='email' placeholder="Email" />
+                    <input v-model='user.email' id='emailInput' type='email' placeholder="Email" />
                 </li>
                 <li>
                     <label for='passwordInput'>Password:</label>
-                    <input id='passwordInput' type='password' placeholder="Password" />
+                    <input v-model='user.password' id='passwordInput' type='password' placeholder="Password" />
                 </li>
             </ul>
             <button class='submitButton' id='signUpBtn'>GLAD TO MEET YOU!</button>
@@ -21,13 +21,35 @@
 </template>
 
 <script>
+import { auth } from '../../config/firebaseConfig';
 
 export default {
-    methods: {
-        setCurrentTab(newTab) {
-            this.$store.dispatch('setCurrentTab', newTab);
-        }
-    }
+  data() {
+    return {
+      user: {
+        email: '',
+        password: ''
+      },
+      formSubmitted: {
+        success: false,
+        error: false
+      }
+    };
+  },
+  methods: {
+      setCurrentTab(newTab) {
+          this.$store.dispatch('setCurrentTab', newTab);
+      },
+      signUp() {
+        auth.createUserWithEmailAndPassword(this.user.email, this.user.password)
+        .then(data => {
+          console.log(data);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      }
+  }
 };
 </script>
 
