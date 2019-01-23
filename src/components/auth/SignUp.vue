@@ -42,7 +42,7 @@ export default {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(0,0,0,0.7);
     z-index: 1;
 }
 
@@ -86,7 +86,7 @@ export default {
             -webkit-transition: -webkit-box-shadow 0.2s;
             -o-transition: box-shadow 0.2s;
             transition: box-shadow 0.2s;
-            
+
             &:focus {
                 outline: 0;
                 -webkit-box-shadow: inset 1px #666;
