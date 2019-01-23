@@ -39,5 +39,11 @@ export default {
   margin: 0 auto;
   display: block;
   width: auto;
+
+  background-color: #666;
+
+  &:hover {
+    background-color: #444;
+  }
 }
 </style>
