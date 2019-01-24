@@ -4,7 +4,7 @@
             <button class='exit' v-on:click.prevent='setCurrentTab(null)'>X</button>
             <ul>
                 <li>
-                    <h2>SIGN UP</h2>
+                    <h2 class='authHeader'>SIGN UP</h2>
                     <transition name='fade'>
                       <p class='errorMessage' v-if='formSubmitted.error'>{{ formSubmitted.errorMessage }}.</p>
                     </transition>

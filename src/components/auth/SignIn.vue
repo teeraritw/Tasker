@@ -4,7 +4,7 @@
             <button class='exit' v-on:click.prevent='setCurrentTab(null)'>X</button>
             <ul>
                 <li>
-                    <h2>SIGN IN</h2>
+                    <h2 class='authHeader'>SIGN IN</h2>
                 </li>
                 <li>
                     <label for='emailInput'>Email:</label>
