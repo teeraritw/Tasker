@@ -48,6 +48,7 @@ export default {
         .then(data => {
           console.log(data);
           this.formSubmitted.error = false;
+          this.setCurrentTab(null);
         })
         .catch(err => {
           this.formSubmitted.error = true;
