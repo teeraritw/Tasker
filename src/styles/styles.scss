@@ -18,17 +18,6 @@ button.exit {
   box-sizing: border-box;
 }
 
-.fade-enter-active, .fade-leave-active {
-  -o-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-  -webkit-transition: opacity 0.2s;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
@@ -61,4 +50,16 @@ button {
 }
 ::placeholder {
     font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+// Vue transitions
+.fade-enter-active, .fade-leave-active {
+  -o-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }

@@ -5,6 +5,9 @@
             <ul>
                 <li>
                     <h2>SIGN UP</h2>
+                    <transition name='fade'>
+                      <p class='errorMessage' v-if='formSubmitted.error'>{{ formSubmitted.errorMessage }}.</p>
+                    </transition>
                 </li>
                 <li>
                     <label for='emailInput'>Email:</label>
@@ -31,7 +34,7 @@ export default {
         password: ''
       },
       formSubmitted: {
-        success: false,
+        errorMessage: null,
         error: false
       }
     };
@@ -44,9 +47,11 @@ export default {
         auth.createUserWithEmailAndPassword(this.user.email, this.user.password)
         .then(data => {
           console.log(data);
+          this.formSubmitted.error = false;
         })
         .catch(err => {
-          console.log(err);
+          this.formSubmitted.error = true;
+          this.formSubmitted.errorMessage = err.message;
         });
       }
   }
