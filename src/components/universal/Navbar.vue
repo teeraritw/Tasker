@@ -5,16 +5,16 @@
         <router-link to='/' exact><img class='logo' src='../../assets/tasker_logo.png' alt='LOGO'></router-link>
       </li>
       <ul>
-        <li>
+        <li v-if='this.getLoggedInStatus'>
             <router-link class='textLink' to='/add' exact>Create</router-link>
         </li>
-        <li>
+        <li v-if='this.getLoggedInStatus'>
             <p class='textLink' v-on:click='setCurrentTab("SignOut")'>Sign Out</p>
         </li>
-        <li>
+        <li v-if='!this.getLoggedInStatus'>
             <p class='textLink' v-on:click='setCurrentTab("SignUp")'>Sign Up</p>
         </li>
-        <li>
+        <li v-if='!this.getLoggedInStatus'>
             <p class='textLink' v-on:click='setCurrentTab("SignIn")'>Sign In</p>
         </li>
         <li>
@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     data() {
         return {
@@ -40,6 +42,11 @@ export default {
         setCurrentTab(newTab) {
             this.$store.dispatch('setCurrentTab', newTab);
         }
+    },
+    computed: {
+        ...mapGetters([
+            'getLoggedInStatus'
+        ])
     }
 };
 </script>

@@ -19,7 +19,6 @@ export default {
     },
     signOut() {
       auth.signOut().then(() => {
-        console.log('User has signed out');
         this.setCurrentTab(null);
       });
     }

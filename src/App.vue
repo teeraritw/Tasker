@@ -39,6 +39,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch('getTodo');
+    this.$store.dispatch('getLoggedInStatus');
   }
 }
 </script>

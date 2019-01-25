@@ -46,7 +46,6 @@ export default {
         signIn() {
             auth.signInWithEmailAndPassword(this.user.email, this.user.password)
             .then(data => {
-                console.log(data);
                 this.formSubmitted.error = false;
                 this.setCurrentTab(null);
             }).catch(err => {

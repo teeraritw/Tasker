@@ -1,14 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { db } from '../config/firebaseConfig';
+import { db, auth } from '../config/firebaseConfig';
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
         todos: [],
-        currentTab: null
+        currentTab: null,
+        loggedIn: false
     },
     getters: {
         getTodos(state) {
@@ -19,9 +20,13 @@ const store = new Vuex.Store({
         },
         getCurrentTab(state) {
             return state.currentTab;
+        },
+        getLoggedInStatus(state) {
+            return state.loggedIn;
         }
     },
     mutations: {
+        // Update state.todos if the todos inside the database updates
         updateTodo(state) {
             db.collection('todos').orderBy('negativeTime').onSnapshot(function (todos) {
                 var newTodos = [];
@@ -37,6 +42,15 @@ const store = new Vuex.Store({
         },
         updateCurrentTab(state, newTab) {
             state.currentTab = newTab;
+        },
+        updateLoggedInStatus(state) {
+            auth.onAuthStateChanged(user => {
+                if (user != null) {
+                    state.loggedIn = true;
+                } else {
+                    state.loggedIn = false;
+                }
+            });
         }
     },
     actions: {
@@ -45,6 +59,9 @@ const store = new Vuex.Store({
         },
         setCurrentTab(context, newTab) {
             context.commit('updateCurrentTab', newTab);
+        },
+        getLoggedInStatus(context) {
+            context.commit('updateLoggedInStatus');
         }
     }
 });
