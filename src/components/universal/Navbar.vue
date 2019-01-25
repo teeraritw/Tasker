@@ -83,9 +83,9 @@ $navbarHeight: 60px;
 
             span {
                 position: absolute;
-                top: 13px;
+                top: 15px;
                 left: 20px;
-                font-size: 18px;
+                font-size: 17px;
             }
         }
     }
