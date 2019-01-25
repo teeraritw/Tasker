@@ -43,6 +43,7 @@ const store = new Vuex.Store({
         updateCurrentTab(state, newTab) {
             state.currentTab = newTab;
         },
+        // Update auth status depending on auth,
         updateLoggedInStatus(state) {
             auth.onAuthStateChanged(user => {
                 if (user != null) {
@@ -54,13 +55,13 @@ const store = new Vuex.Store({
         }
     },
     actions: {
-        getTodo(context) {
+        updateTodo(context) {
             context.commit('updateTodo');
         },
         setCurrentTab(context, newTab) {
             context.commit('updateCurrentTab', newTab);
         },
-        getLoggedInStatus(context) {
+        updateLoggedInStatus(context) {
             context.commit('updateLoggedInStatus');
         }
     }

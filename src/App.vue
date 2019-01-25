@@ -38,8 +38,8 @@ export default {
     ])
   },
   mounted() {
-    this.$store.dispatch('getTodo');
-    this.$store.dispatch('getLoggedInStatus');
+    this.$store.dispatch('updateTodo');
+    this.$store.dispatch('updateLoggedInStatus');
   }
 }
 </script>
