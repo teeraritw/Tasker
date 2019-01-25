@@ -9,7 +9,10 @@ const store = new Vuex.Store({
     state: {
         todos: [],
         currentTab: null,
-        loggedIn: false
+        user: {
+            loggedIn: false,
+            email: null
+        }
     },
     getters: {
         getTodos(state) {
@@ -22,7 +25,10 @@ const store = new Vuex.Store({
             return state.currentTab;
         },
         getLoggedInStatus(state) {
-            return state.loggedIn;
+            return state.user.loggedIn;
+        },
+        getUserEmailSliced(state) {
+            return state.user.email.substring(0,1).toUpperCase();
         }
     },
     mutations: {
@@ -47,9 +53,11 @@ const store = new Vuex.Store({
         updateLoggedInStatus(state) {
             auth.onAuthStateChanged(user => {
                 if (user != null) {
-                    state.loggedIn = true;
+                    state.user.email = user.email;
+                    state.user.loggedIn = true;
                 } else {
-                    state.loggedIn = false;
+                    state.user.email = null;
+                    state.user.loggedIn = false;
                 }
             });
         }

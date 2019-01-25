@@ -17,10 +17,10 @@
         <li v-if='!this.getLoggedInStatus'>
             <p class='textLink' v-on:click='setCurrentTab("SignIn")'>Sign In</p>
         </li>
-        <li>
+        <li v-if='this.getLoggedInStatus'>
           <router-link to='/' exact>
             <div class='circle'>
-              <span>F</span>
+              <span>{{ getUserEmailSliced }}</span>
             </div>
           </router-link>
         </li>
@@ -45,7 +45,8 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'getLoggedInStatus'
+            'getLoggedInStatus',
+            'getUserEmailSliced'
         ])
     }
 };
