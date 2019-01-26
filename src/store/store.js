@@ -8,6 +8,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         todos: [],
+        notifications: [],
         currentTab: null,
         user: {
             loggedIn: false,
@@ -15,18 +16,33 @@ const store = new Vuex.Store({
         }
     },
     getters: {
+        //***** * TODOS GETTERS * *********//
         getTodos(state) {
             return state.todos;
         },
         getSimplifiedTodos(state) {
             return state.todos.slice(0,4);
         },
+
+        //***** * NOTIFICATION GETTERS * *********//
+        getNotification(state) {
+            return state.notifications;
+        },
+        getSimplifiedNotifications(state) {
+            return state.notifications.slice(0,10);
+        },
+
+        //***** * TAB GETTERS * *********//
         getCurrentTab(state) {
             return state.currentTab;
         },
+
+        //***** * AUTH GETTERS * *********//
         getLoggedInStatus(state) {
             return state.user.loggedIn;
         },
+
+        //***** * EMAIL GETTERS * *********//
         getUserEmailName(state) {
             let email = state.user.email;
             return (email.charAt(0).toUpperCase() + email.substring(1, email.indexOf('@')));
@@ -50,10 +66,11 @@ const store = new Vuex.Store({
                 }
             });
         },
+        // Set current tab to anything
         updateCurrentTab(state, newTab) {
             state.currentTab = newTab;
         },
-        // Update auth status depending on auth,
+        // Update auth status depending on auth
         updateLoggedInStatus(state) {
             auth.onAuthStateChanged(user => {
                 if (user != null) {
@@ -63,6 +80,17 @@ const store = new Vuex.Store({
                     state.user.email = null;
                     state.user.loggedIn = false;
                 }
+            });
+        },
+        // Update notifications if database updates 
+        updateNotifications(state) {
+            let newNotifications = [];
+            db.collection('notifications').onSnapshot(notifications => {
+                notifications.docs.forEach(doc => {
+                    newNotifications.push(doc.data());
+                });
+
+                state.notifications = newNotifications;
             });
         }
     },
@@ -75,6 +103,9 @@ const store = new Vuex.Store({
         },
         updateLoggedInStatus(context) {
             context.commit('updateLoggedInStatus');
+        },
+        updateNotifications(context) {
+            context.commit('updateNotifications');
         }
     }
 });

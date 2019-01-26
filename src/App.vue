@@ -40,6 +40,7 @@ export default {
   mounted() {
     this.$store.dispatch('updateTodo');
     this.$store.dispatch('updateLoggedInStatus');
+    this.$store.dispatch('updateNotifications');
   }
 }
 </script>
