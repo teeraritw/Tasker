@@ -2,7 +2,9 @@
     <div id='notification'>
         <ul>
             <li v-for='notification in getSimplifiedNotifications'>
-                <p>{{ moment(notification.time.toDate()).fromNow() }} - {{ notification.user }} {{ notification.content }}</p>
+                <p>{{ notification.user }} {{ notification.content }}
+                    <span>{{ moment(notification.time.toDate()).fromNow() }}</span>
+                </p>
             </li>
         </ul>
     </div>

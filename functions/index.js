@@ -11,7 +11,7 @@ exports.projectCreated = functions.firestore.document('todos/{todosId}')
         .onCreate(doc => {
         const todo = doc.data();
         const notification = {
-            content: 'added a new todo.',
+            content: 'added a new todo',
             user: todo.author,
             time: admin.firestore.FieldValue.serverTimestamp()
         };
@@ -21,7 +21,7 @@ exports.projectCreated = functions.firestore.document('todos/{todosId}')
 
 exports.userSignedUp = functions.auth.user().onCreate(user => {
     const notification = {
-        content: 'just signed up.',
+        content: 'just signed up',
         user: user.email,
         time: admin.firestore.FieldValue.serverTimestamp()
     };
