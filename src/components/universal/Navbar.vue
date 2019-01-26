@@ -78,13 +78,23 @@ $navbarHeight: 60px;
             margin-right: 50px;
             width: 50px;
             height: 50px;
-            background: #ddd;
+            background: #666;
             position: relative;
+
+            transition: background 0.3s;
+            -moz-transition: background 0.3s;
+            -o-transition: background 0.3s;
+            -webkit-transition: background 0.3s;
+
+            &:hover {
+                background: #888;
+            }
 
             span {
                 position: absolute;
                 top: 15px;
                 left: 20px;
+                color: #fff;
                 font-size: 17px;
             }
         }
