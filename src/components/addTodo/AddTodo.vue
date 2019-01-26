@@ -1,5 +1,5 @@
 <template>
-    <div id='addTodo'>
+    <div id='addTodo' v-if='getLoggedInStatus'>
         <div id='addForm'>
             <h2 class='header'>CREATE <span>YOUR</span> TODO</h2>
 
@@ -24,7 +24,8 @@
 </template>
 
 <script>
-import db from '../../config/firebaseConfig';
+import { db } from '../../config/firebaseConfig';
+import { mapGetters } from 'vuex';
 
 export default {
     data() {
@@ -44,12 +45,18 @@ export default {
             db.collection('todos').add({
                 title: this.todo.title,
                 description: this.todo.description,
-                author: 'Fester',
+                author: this.getUserEmailName,
                 date: this.date.toLocaleTimeString('en-US') + ' - ' + this.date.toLocaleDateString('en-US'),
                 negativeTime: -(this.date.getTime())
             });
             this.submitted = true;
         }
+    },
+    computed: {
+        ...mapGetters([
+            'getUserEmailName',
+            'getLoggedInStatus'
+        ])
     }
 }
 </script>

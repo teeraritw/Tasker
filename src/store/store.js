@@ -27,6 +27,10 @@ const store = new Vuex.Store({
         getLoggedInStatus(state) {
             return state.user.loggedIn;
         },
+        getUserEmailName(state) {
+            let email = state.user.email;
+            return (email.charAt(0).toUpperCase() + email.substring(1, email.indexOf('@')));
+        },
         getUserEmailSliced(state) {
             return state.user.email.substring(0,1).toUpperCase();
         }
