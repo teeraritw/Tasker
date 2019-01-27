@@ -29,7 +29,7 @@ const store = new Vuex.Store({
             return state.notifications;
         },
         getSimplifiedNotifications(state) {
-            return state.notifications.slice(0,10);
+            return state.notifications.slice(0,6);
         },
 
         //***** * TAB GETTERS * *********//
@@ -47,8 +47,9 @@ const store = new Vuex.Store({
             let email = state.user.email;
             return (email.charAt(0).toUpperCase() + email.substring(1, email.indexOf('@')));
         },
-        getUserEmailSliced(state) {
-            return state.user.email.substring(0,1).toUpperCase();
+        getUserEmailInitial(state) {
+            let email = state.user.email;
+            return email.charAt(0).toUpperCase() + email.charAt(email.indexOf('@') - 1).toUpperCase();
         }
     },
     mutations: {
@@ -84,7 +85,7 @@ const store = new Vuex.Store({
         },
         // Update notifications if database updates 
         updateNotifications(state) {
-            db.collection('notifications').onSnapshot(notifications => {
+            db.collection('notifications').orderBy('time', 'desc').onSnapshot(notifications => {
                 let newNotifications = [];
                 notifications.docs.forEach(doc => {
                     newNotifications.push(doc.data());

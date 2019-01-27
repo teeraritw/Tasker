@@ -20,7 +20,7 @@
         <li v-if='this.getLoggedInStatus'>
           <router-link to='/' exact>
             <div class='circle'>
-              <span>{{ getUserEmailSliced }}</span>
+              <span>{{ getUserEmailInitial }}</span>
             </div>
           </router-link>
         </li>
@@ -46,7 +46,7 @@ export default {
     computed: {
         ...mapGetters([
             'getLoggedInStatus',
-            'getUserEmailSliced'
+            'getUserEmailInitial'
         ])
     }
 };
@@ -93,7 +93,7 @@ $navbarHeight: 60px;
             span {
                 position: absolute;
                 top: 15px;
-                left: 20px;
+                left: 16px;
                 color: #fff;
                 font-size: 17px;
             }

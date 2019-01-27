@@ -20,12 +20,13 @@ function markAsRunning(eventId) {
 exports.projectCreated = functions.firestore.document('todos/{todosId}')
         .onCreate((doc, event) => {
         let eventId = event.eventId;
+        let time = admin.firestore.FieldValue.serverTimestamp();
 
         const todo = doc.data();
         const notification = {
             content: 'added a new todo',
             user: todo.author,
-            time: admin.firestore.FieldValue.serverTimestamp()
+            time: time
         };
 
     if (isAlreadyRunning(eventId)) {
@@ -38,10 +39,12 @@ exports.projectCreated = functions.firestore.document('todos/{todosId}')
 
 exports.userSignedUp = functions.auth.user().onCreate((user, event) => {
     let eventId = event.eventId;
+    let time = admin.firestore.FieldValue.serverTimestamp();
+
     const notification = {
         content: 'just signed up',
         user: user.email,
-        time: admin.firestore.FieldValue.serverTimestamp()
+        time: time
     };
 
     if (isAlreadyRunning(eventId)) {

@@ -70,7 +70,8 @@ a {
     box-sizing: border-box;
     display: inline-block;
     width: 500px;
-    height: 700px;
+    min-height: 150px;
+    max-height: 700px;
     overflow: hidden;
     padding: 30px;
     padding-top: 10px;
