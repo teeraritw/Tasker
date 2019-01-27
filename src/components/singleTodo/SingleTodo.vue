@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import db from '../../config/firebaseConfig';
+import { db } from '../../config/firebaseConfig';
 
 export default {
     data() {

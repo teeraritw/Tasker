@@ -4,29 +4,50 @@
       <li>
         <router-link to='/' exact><img class='logo' src='../../assets/tasker_logo.png' alt='LOGO'></router-link>
       </li>
-      <div>
-        <li>
+      <ul>
+        <li v-if='this.getLoggedInStatus'>
             <router-link class='textLink' to='/add' exact>Create</router-link>
-            <router-link class='textLink' to='/' exact>Sign Out</router-link>
         </li>
-        <li>
+        <li v-if='this.getLoggedInStatus'>
+            <p class='textLink' v-on:click='setCurrentTab("SignOut")'>Sign Out</p>
+        </li>
+        <li v-if='!this.getLoggedInStatus'>
+            <p class='textLink' v-on:click='setCurrentTab("SignUp")'>Sign Up</p>
+        </li>
+        <li v-if='!this.getLoggedInStatus'>
+            <p class='textLink' v-on:click='setCurrentTab("SignIn")'>Sign In</p>
+        </li>
+        <li v-if='this.getLoggedInStatus'>
           <router-link to='/' exact>
             <div class='circle'>
-              <span>F</span>
+              <span>{{ getUserEmailInitial }}</span>
             </div>
           </router-link>
         </li>
-      </div>
+      </ul>
     </ul>
   </nav>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     data() {
         return {
 
         };
+    },
+    methods: {
+        setCurrentTab(newTab) {
+            this.$store.dispatch('setCurrentTab', newTab);
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'getLoggedInStatus',
+            'getUserEmailInitial'
+        ])
     }
 };
 </script>
@@ -57,14 +78,24 @@ $navbarHeight: 60px;
             margin-right: 50px;
             width: 50px;
             height: 50px;
-            background: #ddd;
+            background: #666;
             position: relative;
+
+            transition: background 0.3s;
+            -moz-transition: background 0.3s;
+            -o-transition: background 0.3s;
+            -webkit-transition: background 0.3s;
+
+            &:hover {
+                background: #888;
+            }
 
             span {
                 position: absolute;
-                top: 13px;
-                left: 20px;
-                font-size: 18px;
+                top: 15px;
+                left: 16px;
+                color: #fff;
+                font-size: 17px;
             }
         }
     }
@@ -73,7 +104,16 @@ $navbarHeight: 60px;
 a {
     color: #222;
     text-decoration: none;
+}
 
+.textLink {
+    color: #222;
+    margin: 0 10px;
+
+    cursor: pointer;
+}
+
+a, .textLink {
     -o-transition: opacity 0.3s;
     -moz-transition: opacity 0.3s;
     -webkit-transition: opacity 0.3s;
@@ -82,10 +122,6 @@ a {
     &:hover {
         opacity: 0.5;
     }
-}
-
-.textLink {
-    margin: 0 10px;
 }
 
 .logo {
