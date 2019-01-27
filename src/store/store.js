@@ -84,8 +84,8 @@ const store = new Vuex.Store({
         },
         // Update notifications if database updates 
         updateNotifications(state) {
-            let newNotifications = [];
             db.collection('notifications').onSnapshot(notifications => {
+                let newNotifications = [];
                 notifications.docs.forEach(doc => {
                     newNotifications.push(doc.data());
                 });
