@@ -4,20 +4,19 @@
             <li v-for='notification in getSimplifiedNotifications'>
                 <span class='user'>{{ notification.user }}</span> 
                 <span class='content'>{{ notification.content }}</span>
-                <span class='date'>{{ moment(notification.time.toDate()).fromNow() }}</span>
+                <span class='date'>{{ notification.time.toDate() | fromNow }}</span>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
-import moment from 'moment';
 import { mapGetters } from 'vuex';
 
 export default {
     data() {
         return {
-
+            interval: null
         };
     },
     methods: {
@@ -29,6 +28,14 @@ export default {
         ...mapGetters([
             'getSimplifiedNotifications'
         ])
+    },
+    created() {
+        this.interval = setInterval(() => {
+            this.$forceUpdate();
+        }, 1000);
+    },
+    beforeDestroy() {
+        clearInterval(this.interval);
     }
 };
 </script>
