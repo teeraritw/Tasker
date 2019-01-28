@@ -79,7 +79,10 @@ $navbarHeight: 60px;
             width: 50px;
             height: 50px;
             background: #666;
-            position: relative;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             transition: background 0.3s;
             -moz-transition: background 0.3s;
@@ -91,11 +94,7 @@ $navbarHeight: 60px;
             }
 
             span {
-                position: absolute;
-                top: 15px;
-                left: 16px;
                 color: #fff;
-                font-size: 17px;
             }
         }
     }
