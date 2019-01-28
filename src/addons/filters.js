@@ -22,6 +22,6 @@ Vue.filter('fromNow', function(date) {
     return moment(date).fromNow();
 });
 
-Vue.filter('formatToDate', function(date) {
+Vue.filter('toCalendar', function(date) {
     return moment(date).calendar();
 });
