@@ -6,7 +6,7 @@
                 <router-link v-bind:to='"/todos/" + todo.id'><h2>{{ todo.title | snippetTitle }}</h2></router-link>
                     <p class='description'>{{ todo.description | snippet }}</p>
                     <p><span class='darkerText'>Author:</span> {{ todo.author }}</p>
-                    <p><span class='darkerText'>Post date:</span> {{ todo.date }}</p>
+                    <p><span class='darkerText'>Post date:</span> {{ todo.date.toDate() | formatToDate }}</p>
             </li>
         </ul>
         <router-link to='/todos' exact><button>READ MORE</button></router-link>

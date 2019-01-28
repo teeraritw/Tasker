@@ -7,7 +7,7 @@
                     <router-link v-bind:to='"/todos/" + todo.id'><h2>{{ todo.title | snippetTitle }}</h2></router-link>
                     <p class='description'>{{ todo.description | snippet }}</p>
                     <p>Posted by: {{ todo.author }}</p>
-                    <p>Date: {{ todo.date }}</p>
+                    <p>Date: {{ todo.date.toDate() | formatToDate }}</p>
                     <img src='../../assets/feather.png' alt='Feather pen' />
                 </li>
             </ul>

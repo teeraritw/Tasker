@@ -26,6 +26,7 @@
 <script>
 import { db } from '../../config/firebaseConfig';
 import { mapGetters } from 'vuex';
+import firebase from 'firebase';
 
 export default {
     data() {
@@ -46,8 +47,7 @@ export default {
                 title: this.todo.title,
                 description: this.todo.description,
                 author: this.getUserEmailName,
-                date: this.date.toLocaleTimeString('en-US') + ' - ' + this.date.toLocaleDateString('en-US'),
-                negativeTime: -(this.date.getTime())
+                date: firebase.firestore.FieldValue.serverTimestamp()
             });
             this.submitted = true;
         }

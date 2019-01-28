@@ -55,7 +55,7 @@ const store = new Vuex.Store({
     mutations: {
         // Update state.todos if the todos inside the database updates
         updateTodo(state) {
-            db.collection('todos').orderBy('negativeTime').onSnapshot(function (todos) {
+            db.collection('todos').orderBy('date', 'desc').onSnapshot(function (todos) {
                 var newTodos = [];
 
                 if (todos.docs.length > 0) {

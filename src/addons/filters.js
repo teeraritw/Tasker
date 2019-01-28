@@ -21,3 +21,7 @@ Vue.filter('snippetTitle', function (val) {
 Vue.filter('fromNow', function(date) {
     return moment(date).fromNow();
 });
+
+Vue.filter('formatToDate', function(date) {
+    return moment(date).calendar();
+});
