@@ -1,5 +1,6 @@
 <template>
     <div id='notification'>
+        <div id='fadeList'></div>
         <ul>
             <li v-for='notification in getSimplifiedNotifications'>
                 <span class='user'>{{ notification.user }}</span> 
@@ -42,6 +43,7 @@ export default {
 
 <style scoped lang='scss'>
 #notification {
+    position: relative;
     width: 450px;
     height: 300px;
     background: #fff;

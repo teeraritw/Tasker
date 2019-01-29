@@ -37,35 +37,6 @@ a {
     text-decoration: none;
 }
 
-#fadeList {
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: -webkit-linear-gradient(
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255, 0) 85%,
-        rgba(255,255,255,1) 100%
-    );
-    background: -o-linear-gradient(
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255, 0) 85%,
-        rgba(255,255,255,1) 100%
-    );
-    background: -moz-linear-gradient(
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255, 0) 85%,
-        rgba(255,255,255,1) 100%
-    );
-    background: linear-gradient(
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255, 0) 85%,
-        rgba(255,255,255,1) 100%
-    );
-}
-
 #todoList {
     box-sizing: border-box;
     display: inline-block;
