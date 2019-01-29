@@ -32,6 +32,29 @@ export default {
 
 <style scoped lang='scss'>
 
+#fadeList {
+    background: -webkit-linear-gradient(
+        rgba(255,255,255,0) 0%,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255,255,255,1) 100%
+    );
+    background: -o-linear-gradient(
+        rgba(255,255,255,0) 0%,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255,255,255,1) 100%
+    );
+    background: -moz-linear-gradient(
+        rgba(255,255,255,0) 0%,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255,255,255,1) 100%
+    );
+    background: linear-gradient(
+        rgba(255,255,255,0) 0%,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255,255,255,1) 100%
+    );
+}
+
 a {
     color: #fff;
     text-decoration: none;
@@ -73,11 +96,14 @@ ul {
     list-style-type: none;
 }
 
+li:first-of-type {
+    margin-top: 30px;
+}
+
 li {
     box-sizing: border-box;
-    margin: 20px 0;
+    margin: 5px 0;
     padding-bottom: 30px;
-    border-bottom: 1px solid #222;
 
     h2 {
         color: #222;
