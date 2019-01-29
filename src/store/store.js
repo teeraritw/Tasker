@@ -63,8 +63,9 @@ const store = new Vuex.Store({
                         newTodos.push(doc.data());
                         newTodos[index].id = doc.id;
                     });
-                    state.todos = newTodos;
                 }
+
+                state.todos = newTodos;
             });
         },
         // Set current tab to anything
@@ -93,11 +94,19 @@ const store = new Vuex.Store({
 
                 state.notifications = newNotifications;
             });
+        },
+        // After todo has been deleted
+        deleteTodo(state) {
         }
     },
     actions: {
         updateTodo(context) {
             context.commit('updateTodo');
+        },
+        deleteTodo(context, todoId) {
+            db.collection('todos').doc(todoId).delete().then(() => {
+                context.commit('deleteTodo');
+            });
         },
         setCurrentTab(context, newTab) {
             context.commit('updateCurrentTab', newTab);
