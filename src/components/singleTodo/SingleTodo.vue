@@ -2,9 +2,9 @@
     <div id='singleTodo'>
         <div id='todoWrapper' v-if='todo'>
             <h2>{{ todo.title }}</h2>
-            <p>{{ todo.description }}</p>
+            <p>Description: {{ todo.description }}</p>
             <p>Posted by: {{ todo.author }}</p>
-            <p>Date: {{ todo.date }}</p>
+            <p>Date: {{ todo.date.toDate() | formatToDate }}</p>
         </div>
     </div>
 </template>
@@ -35,7 +35,7 @@ export default {
 <style scoped lang='scss'>
 #todoWrapper {
     background: #fff;
-    padding: 30px;
+    padding: 30px 100px;
     margin: 0 auto;
     margin-top: 80px;
     width: 800px;
