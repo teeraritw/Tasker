@@ -52,6 +52,10 @@ button {
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
+.darkerText {
+  color: #444;
+}
+
 // Vue transitions
 .fade-enter-active, .fade-leave-active {
   -o-transition: opacity 0.2s;
