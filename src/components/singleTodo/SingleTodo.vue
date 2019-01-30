@@ -21,7 +21,6 @@ export default {
     },
     created() {
         db.collection('todos').get().then(data => {
-            console.log(data);
             data.docs.forEach(doc => {
                 if (this.id == doc.id) {
                     this.todo = doc.data();

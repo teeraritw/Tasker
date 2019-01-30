@@ -3,7 +3,7 @@
         <div id='fadeList'></div>
         <ul>
             <li v-for='notification in getSimplifiedNotifications'>
-                <span class='user'>{{ notification.user }}</span> 
+                <span class='user'>{{ notification.name }}</span> 
                 <span class='content'>{{ notification.content }}</span>
                 <span class='date'>{{ notification.time.toDate() | fromNow }}</span>
             </li>
