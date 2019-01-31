@@ -51,6 +51,10 @@ export default {
     }
 }
 
+#todoComponents #todoList, #todoComponents #notification {
+    margin-top: 30px;
+}
+
 @media only screen and (max-width: 1130px) {
   #todoComponents {
     flex-direction: column;
@@ -79,9 +83,33 @@ export default {
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
+    #todoComponents > div h2.header{
+        font-size: 28px;
+    }
+
     #todoList {
-        height: 500px;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #todoComponents > div h2.header{
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    #todoComponents {
+        > div {
+            width: 90%;
+        }
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    #todoList {
+        height: 300px;
     }
 }
 </style>

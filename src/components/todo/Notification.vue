@@ -82,4 +82,10 @@ li {
     }
     
 }
+
+@media only screen and (max-width: 425px) {
+    li span {
+        font-size: 15px;
+    }
+}
 </style>

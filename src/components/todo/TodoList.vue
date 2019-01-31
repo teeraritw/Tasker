@@ -108,7 +108,7 @@ li {
 
     h2 {
         color: #222;
-        font-size: 28px;
+        font-size: 23px;
         margin: 0;
 
         &:hover {
@@ -130,13 +130,27 @@ li {
     color: #222;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 720px) {
     #todoList h2 {
-        font-size: 23px;
+        font-size: 25px;
     }
 
     #todoList p {
-        font-size: 16px;
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #todoList h2 {
+        font-size: 18px;
+    }
+
+    #todoList p {
+        font-size: 15px;
+    }
+
+    #todoList button {
+        font-size: 14px;
     }
 }
 </style>
