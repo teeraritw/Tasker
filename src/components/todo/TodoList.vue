@@ -31,7 +31,6 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-
 #fadeList {
     background: -webkit-linear-gradient(
         rgba(255,255,255,0) 0%,
@@ -58,31 +57,33 @@ export default {
 a {
     color: #fff;
     text-decoration: none;
+    display: grid;
+    display: ms-grid;
 }
 
 #todoList {
     box-sizing: border-box;
-    display: inline-block;
+    display: grid;
+    display: ms-grid;
     width: 500px;
     min-height: 150px;
     max-height: 700px;
     overflow: hidden;
-    padding: 30px;
-    padding-top: 10px;
+    padding: 0 30px 20px 30px;
     position: relative;
     background: #fff;
 
     button {
-        bottom: 10px;
-        left: 120px;
-        width: 50%;
+        position: relative;
+        z-index: 1;
+        width: 60%;
         border: 0;
         padding: 15px;
         font-size: 17px;
         font-family: Roboto, Arial, Helvetica, sans-serif;
-        position: absolute;
         color: white;
         background: #666;
+        justify-self: center;
         cursor: pointer;
 
         &:hover {

@@ -51,4 +51,34 @@ export default {
     }
 }
 
+@media only screen and (max-width: 1130px) {
+  #todoComponents {
+    flex-direction: column;
+
+    > div {
+        margin: 0 auto;
+        width: 60%;
+
+        h2.header {
+            font-size: 32px;
+        }
+    }
+
+    #todoList {
+      width: auto;
+    }
+
+    #notification {
+      width: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+    #todoComponents {
+        > div {
+            width: 100%;
+        }
+    }
+}
 </style>
