@@ -54,6 +54,7 @@ export default {
 @media only screen and (max-width: 1130px) {
   #todoComponents {
     flex-direction: column;
+    -ms-flex-direction: column;
 
     > div {
         margin: 0 auto;
