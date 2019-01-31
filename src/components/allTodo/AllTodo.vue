@@ -4,7 +4,7 @@
         <div id='allTodo'>
             <ul>
                 <li v-for='todo in getTodos'>
-                    <button class='delete' v-on:click='deleteTodo(todo.id)'>X</button>
+                    <button v-if='getLoggedInStatus' class='delete' v-on:click='deleteTodo(todo.id)'>X</button>
                     <router-link v-bind:to='"/todos/" + todo.id'><h2>{{ todo.title | snippetTitle }}</h2></router-link>
                     <p class='description'>{{ todo.description | snippet }}</p>
                     <p>Posted by: {{ todo.author }}</p>
@@ -34,7 +34,8 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'getTodos'
+            'getTodos',
+            'getLoggedInStatus'
         ])
     }
 }
