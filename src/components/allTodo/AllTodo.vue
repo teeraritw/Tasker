@@ -42,21 +42,21 @@ export default {
 
 <style scoped lang='scss'>
 #wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    -ms-flex-direction: column;
+    width: 550px;
+    margin: 0 auto;
 }
 
 #allTodo {
-    width: 600px;
+    width: 100%;
     box-sizing: border-box;
     min-height: 50px;
+    margin-top: 30px;
 }
 
 h2.header {
-    font-size: 36px;
+    font-size: 28px;
     position: relative;
+    left: 0;
     top: 30px;
 }
 
@@ -65,6 +65,7 @@ a {
 }
 
 ul {
+    padding: 0;
     list-style-type: none;
 
     li {
@@ -77,7 +78,7 @@ ul {
     }
 
     h2 {
-        font-size: 32px;
+        font-size: 27px;
         margin: 0;
         color: #444;
 
@@ -112,6 +113,34 @@ ul {
             }
 
         cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #wrapper h2.header {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #wrapper {
+        width: 90%;
+
+        h2.header {
+            font-size: 22px;
+        }
+    }
+
+    ul li {
+        height: auto;
+        max-height: 300px;
+
+        h2 {
+            font-size: 21px;
+        }
+        p {
+            font-size: 14px;
+        }
     }
 }
 
