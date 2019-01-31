@@ -58,18 +58,14 @@ export default {
 
     > div {
         margin: 0 auto;
-        width: 60%;
+        width: 500px;
 
         h2.header {
             font-size: 32px;
         }
     }
 
-    #todoList {
-        width: auto;
-    }
-
-    #notification {
+    #todoList, #notification {
         width: auto;
     }
   }
@@ -78,8 +74,14 @@ export default {
 @media only screen and (max-width: 768px) {
     #todoComponents {
         > div {
-            width: 100%;
+            width: 80%;
         }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #todoList {
+        height: 500px;
     }
 }
 </style>

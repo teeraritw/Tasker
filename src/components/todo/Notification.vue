@@ -75,4 +75,11 @@ li {
         color: #666;
     }
 }
+
+@media only screen and (max-width: 500px) {
+    li span {
+        font-size: 16px;
+    }
+    
+}
 </style>

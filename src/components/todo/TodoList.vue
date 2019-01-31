@@ -108,7 +108,7 @@ li {
 
     h2 {
         color: #222;
-        font-size: 30px;
+        font-size: 28px;
         margin: 0;
 
         &:hover {
@@ -134,6 +134,9 @@ li {
     #todoList h2 {
         font-size: 23px;
     }
-    
+
+    #todoList p {
+        font-size: 16px;
+    }
 }
 </style>
