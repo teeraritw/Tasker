@@ -74,18 +74,18 @@ a {
     background: #fff;
 
     button {
-        position: relative;
+        bottom: 10px;
+        left: 25%;
         z-index: 1;
-        width: 60%;
+        width: 50%;
         border: 0;
         padding: 15px;
         font-size: 17px;
         font-family: Roboto, Arial, Helvetica, sans-serif;
+        position: absolute;
         color: white;
         background: #666;
-        justify-self: center;
         cursor: pointer;
-
         &:hover {
             background: #444;
         }
