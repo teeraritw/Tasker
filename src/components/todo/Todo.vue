@@ -44,7 +44,7 @@ export default {
     }
 
     div > h2 {
-        font-size: 36px;
+        font-size: 32px;
         position: relative;
         top: 30px;
         left: 20px;
@@ -65,11 +65,11 @@ export default {
     }
 
     #todoList {
-      width: auto;
+        width: auto;
     }
 
     #notification {
-      width: auto;
+        width: auto;
     }
   }
 }

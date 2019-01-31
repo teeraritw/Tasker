@@ -53,7 +53,7 @@ export default {
 
 ul {
     list-style-type: none;
-    padding-right: 20px;
+    padding: 0 20px;
 }
 
 li {

@@ -108,7 +108,7 @@ li {
 
     h2 {
         color: #222;
-        font-size: 35px;
+        font-size: 30px;
         margin: 0;
 
         &:hover {
@@ -128,5 +128,12 @@ li {
 
 .darkerText {
     color: #222;
+}
+
+@media only screen and (max-width: 500px) {
+    #todoList h2 {
+        font-size: 23px;
+    }
+    
 }
 </style>
