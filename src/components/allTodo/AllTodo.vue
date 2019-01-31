@@ -9,7 +9,6 @@
                     <p class='description'>{{ todo.description | snippet }}</p>
                     <p>Posted by: {{ todo.author }}</p>
                     <p>Date: {{ todo.date.toDate() | toCalendar }}</p>
-                    <img src='../../assets/feather.png' alt='Feather pen' />
                 </li>
             </ul>
         </div>
@@ -75,18 +74,6 @@ ul {
         margin: 10px 0;
         overflow: hidden;
         height: 200px;
-
-        img {
-            position: absolute;
-            opacity: 0.5;
-            top: 30px;
-            -moz-transform: rotateZ(30deg);
-            -o-transform: rotateZ(30deg);
-            -webkit-transform: rotateZ(30deg);
-            transform: rotateZ(30deg);
-            right: 25px;
-            width: 100px;
-        }
     }
 
     h2 {
