@@ -65,7 +65,7 @@ a {
     box-sizing: border-box;
     display: grid;
     display: ms-grid;
-    width: 500px;
+    width: 400px;
     min-height: 150px;
     max-height: 700px;
     overflow: hidden;

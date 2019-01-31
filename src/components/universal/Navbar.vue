@@ -21,7 +21,7 @@
             <li v-if='!this.getLoggedInStatus'>
                 <p class='textLink' v-on:click='setCurrentTab("SignIn")'>Sign In</p>
             </li>
-            <li v-if='this.getLoggedInStatus'>
+            <li class='profilePic' v-if='this.getLoggedInStatus'>
                 <router-link to='/' exact>
                     <div class='circle'>
                         <span>{{ getUserEmailInitial }}</span>
@@ -162,7 +162,7 @@ a, .textLink {
         }
     }
 
-    #navbar ul .lowerNav li:last-of-type {
+    #navbar ul li.profilePic {
         display: none;
     }
 

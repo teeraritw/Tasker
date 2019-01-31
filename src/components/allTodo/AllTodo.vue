@@ -50,7 +50,7 @@ export default {
 }
 
 #allTodo {
-    width: 800px;
+    width: 600px;
     box-sizing: border-box;
     min-height: 50px;
 }
@@ -90,7 +90,7 @@ ul {
     }
 
     h2 {
-        font-size: 38px;
+        font-size: 32px;
         margin: 0;
         color: #444;
 
