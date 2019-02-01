@@ -1,7 +1,7 @@
 <template>
     <div id='addTodo' v-if='getLoggedInStatus'>
         <div id='addForm'>
-            <h2 class='header'>CREATE <span>YOUR</span> TODO</h2>
+            <h2 class='header'>CREATE YOUR TODO</h2>
 
             <p v-if='submitted'>Your todo has been created! You can check it out <router-link to='/todos' exact>here</router-link></p>
             
@@ -148,10 +148,6 @@ ul {
 .header {
     text-align: center;
     font-size: 28px;
-
-    span {
-        font-weight: bold;
-    }
 }
 
 p {
