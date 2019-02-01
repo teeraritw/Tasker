@@ -34,10 +34,10 @@ export default {
 <style scoped lang='scss'>
 #todoWrapper {
     background: #fff;
-    padding: 30px 60px;
+    padding: 10px 40px;
     margin: 0 auto;
     margin-top: 80px;
-    width: 800px;
+    width: 700px;
 }
 
 h2 {
