@@ -184,6 +184,7 @@ p {
 
 @media screen and (max-width: 586px) {
     #addForm {
+        width: 100%;
         form {
             width: 100%;
         }
@@ -199,12 +200,6 @@ p {
         button {
             font-size: 14px;
         }
-    }
-}
-
-@media screen and (max-width: 475px) {
-    #addForm {
-        width: 100%;
     }
 }
 </style>
