@@ -89,12 +89,15 @@
         padding: 10px;
         font-size: 15px;
         color: #fff;
-        background-color: #ef7502;
+        background-color: #bcb665;
         width: 125px;
         align-self: center;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
 
         &:hover {
-            background-color: #ef0206;
+            background-color: #97bc65;
         }
     }
 }
