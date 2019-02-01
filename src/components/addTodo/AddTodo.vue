@@ -73,7 +73,7 @@ a {
     justify-content: center;
 }
 #addForm {
-    width: 960px;
+    width: 800px;
     background: #fff;
     padding: 20px;
 
@@ -185,7 +185,7 @@ p {
 @media screen and (max-width: 586px) {
     #addForm {
         form {
-            width: 80%;
+            width: 100%;
         }
 
         h2.header {
@@ -199,6 +199,12 @@ p {
         button {
             font-size: 14px;
         }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    #addForm {
+        width: 100%;
     }
 }
 </style>
