@@ -101,7 +101,7 @@ a {
     label {
         text-align: left;
         display: block;
-        font-size: 20px;
+        font-size: 18px;
         margin: 0 0 10px 0;
     }
     input, textarea {
@@ -127,7 +127,7 @@ a {
         padding: 10px;
         font-family: Roboto, Arial, Helvetica, sans-serif;
         cursor: pointer;
-        font-size: 20px;
+        font-size: 18px;
         width: 150px;
 
         &:hover {
@@ -147,7 +147,7 @@ ul {
 
 .header {
     text-align: center;
-    font-size: 35px;
+    font-size: 32px;
 
     span {
         font-weight: bold;
@@ -156,5 +156,49 @@ ul {
 
 p {
     text-align: center;
+}
+
+@media screen and (max-width: 950px) {
+
+    h2.header {
+        font-size: 28px;
+    }
+
+    #addForm {
+
+        width: 80%;
+
+        form {
+            width: 400px;
+        }
+
+        button {
+            font-size: 16px;
+        }
+
+        label {
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 586px) {
+    #addForm {
+        form {
+            width: 80%;
+        }
+
+        h2.header {
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        button {
+            font-size: 14px;
+        }
+    }
 }
 </style>
