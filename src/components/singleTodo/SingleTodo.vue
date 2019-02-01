@@ -38,12 +38,46 @@ export default {
     margin: 0 auto;
     margin-top: 80px;
     width: 800px;
-    min-height: 200px;
 }
 
 h2 {
     margin: 15px 0;
     color: #444;
-    font-size: 34px;
+    font-size: 29px;
+}
+
+@media screen and (max-width: 800px) {
+    #todoWrapper {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #todoWrapper {
+        padding: 10px 20px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    h2 {
+        font-size: 23px;
+    }
+    p {
+        font-size: 14px;
+    }
 }
 </style>
