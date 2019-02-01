@@ -108,6 +108,8 @@ a {
         width: 100%;
         display: block;
         padding: 10px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
         border-radius: 5px;
 
         -moz-transition: box-shadow 0.1s;

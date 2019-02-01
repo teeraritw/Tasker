@@ -1,5 +1,5 @@
 .auth {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
@@ -12,53 +12,76 @@
     position: relative;
     padding: 15px;
     background: #fff;
-    width: 960px;
+    width: 800px;
     margin: 300px auto;
-    -webkit-box-shadow: inset 0 0 2px;
-    box-shadow: inset 0 0 2px;
     height: auto;
-    text-align: center;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+
     button {
         cursor: pointer;
     }
 
     h2.authHeader {
-      font-size: 32px;
+      font-size: 26px;
       margin-top: 0;
     }
 
     ul {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
         list-style-type: none;
-        margin: 0 auto;
+        margin: 10px auto 0 auto;
         width: 500px;
         text-align: center;
         padding: 0;
     }
 
     li {
-        margin: 20px 0;
+        margin: 10px 0;
 
         label {
+            font-size: 14px;
             display: inline-block;
-            width: 100px;
+            width: 20%;
+            margin-right: 5px;
+            text-align: right;
         }
         input {
-            width: 300px;
-            padding: 10px;
+            width: 65%;
+            min-width: 200px;
+            padding: 7px;
             border: 1px solid #ddd;
-            border-radius: 50px;
 
-            -moz-transition: box-shadow 0.2s;
-            -webkit-transition: -webkit-box-shadow 0.2s;
-            -o-transition: box-shadow 0.2s;
-            transition: box-shadow 0.2s;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+
+            -moz-transition: box-shadow 0.1s;
+            -webkit-transition: -webkit-box-shadow 0.1s;
+            -o-transition: box-shadow 0.1s;
+            transition: box-shadow 0.1s;
 
             &:focus {
                 outline: 0;
                 -webkit-box-shadow: inset 1px #666;
-                box-shadow: inset 0 0 2px #666;
+                box-shadow: inset 0 0 1px #666;
             }
         }
+    }
+
+    li:first-of-type {
+        margin-top: 15px;
+        
+        h2 {
+            margin: 0;
+        }
+    }
+
+    li:nth-child(3) {
+        margin-bottom: 15px;
     }
 
     .submitButton {
@@ -66,15 +89,84 @@
         padding: 10px;
         font-size: 15px;
         color: #fff;
-        background-color: #00cc00;
+        background-color: #ef7502;
         width: 125px;
+        align-self: center;
 
         &:hover {
-            background-color: #00bb00;
+            background-color: #ef0206;
         }
+    }
+}
+
+button.exit {
+    position: absolute;
+    align-self: flex-end;
+    width: 32px;
+    height: 32px;
+    color: #444;
+    font-size: 19px;
+    border: 0;
+    background: transparent;
+
+    &:hover {
+        opacity: 0.5;
     }
 }
 
 .errorMessage {
     color: red;
+}
+
+@media screen and (max-width: 850px) {
+    .authForm {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .authForm {
+
+        h2.authHeader {
+            font-size: 24px;
+        }
+
+        ul {
+            width: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .authForm {
+        li {
+            label {
+                display: block;
+                text-align: left;
+            }
+
+            input {
+                margin-top: 5px;
+                width: 100%;
+                display: block;
+                font-size: 13px;
+            }
+        }
+
+        ul {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .authForm {
+        ul {
+            width: 90%;
+        }
+
+        button.submitButton {
+            margin-top: 10px;
+        }
+    }
 }
