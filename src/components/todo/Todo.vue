@@ -75,17 +75,13 @@ export default {
   }
 }
 
-@media only screen and (max-width: 768px) {
-    #todoComponents {
-        > div {
-            width: 80%;
-        }
-    }
-}
-
 @media only screen and (max-width: 600px) {
     #todoComponents > div h2.header{
         font-size: 28px;
+    }
+
+    #todoComponents > div {
+        width: 80%;
     }
 
     #todoList {
@@ -109,7 +105,7 @@ export default {
 
 @media only screen and (max-width: 340px) {
     #todoList {
-        height: 300px;
+        height: 350px;
     }
 }
 </style>

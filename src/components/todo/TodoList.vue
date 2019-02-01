@@ -130,16 +130,6 @@ li {
     color: #222;
 }
 
-@media only screen and (max-width: 720px) {
-    #todoList h2 {
-        font-size: 25px;
-    }
-
-    #todoList p {
-        font-size: 17px;
-    }
-}
-
 @media only screen and (max-width: 600px) {
     #todoList h2 {
         font-size: 18px;
@@ -151,6 +141,30 @@ li {
 
     #todoList button {
         font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #todoList ul {
+        margin: 0;
+    }
+
+    #todoList p.description {
+        margin: 10px 0;
+    }
+
+    #todoList ul li {
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #todoList p {
+        font-size: 14px;
+    }
+
+    #todoList h2 {
+        font-size: 16px;
     }
 }
 </style>
