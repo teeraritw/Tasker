@@ -81,7 +81,7 @@ export default {
         vertical-align: middle;
 
         div.circle {
-            margin-right: 50px;
+            margin-right: 20px;
             width: 40px;
             height: 40px;
             background: #666;
@@ -141,6 +141,12 @@ a, .textLink {
 
 .circle {
     border-radius: 50%;
+}
+
+@media screen and (max-width: 586px) {
+    #navbar ul li div.circle {
+        margin-right: 5px;
+    }
 }
 
 @media screen and (max-width: 510px) {
