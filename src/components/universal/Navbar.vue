@@ -65,7 +65,7 @@ export default {
     margin: 0;
     background: #fff;
     width: 100%;
-    height: auto;
+    height: 40px;
 
     ul {
         padding-left: 10px;
