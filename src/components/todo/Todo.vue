@@ -62,7 +62,7 @@ export default {
 
     > div {
         margin: 0 auto;
-        width: 500px;
+        width: 450px;
 
         h2.header {
             font-size: 32px;
