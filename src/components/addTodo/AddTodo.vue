@@ -108,12 +108,12 @@ a {
         width: 100%;
         display: block;
         padding: 10px;
-        border-radius: 15px;
+        border-radius: 5px;
 
-        -moz-transition: box-shadow 0.2s;
-        -webkit-transition: -webkit-box-shadow 0.2s;
-        -o-transition: box-shadow 0.2s;
-        transition: box-shadow 0.2s;
+        -moz-transition: box-shadow 0.1s;
+        -webkit-transition: -webkit-box-shadow 0.1s;
+        -o-transition: box-shadow 0.1s;
+        transition: box-shadow 0.1s;
     }
     input[type=text] {
         border: 0;
@@ -127,8 +127,8 @@ a {
         padding: 10px;
         font-family: Roboto, Arial, Helvetica, sans-serif;
         cursor: pointer;
-        font-size: 18px;
-        width: 150px;
+        font-size: 16px;
+        width: 130px;
 
         &:hover {
             background: #444;
@@ -147,7 +147,7 @@ ul {
 
 .header {
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
 
     span {
         font-weight: bold;
