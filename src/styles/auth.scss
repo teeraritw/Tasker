@@ -6,14 +6,16 @@
     left: 0;
     background-color: rgba(0,0,0,0.7);
     z-index: 20;
+    overflow-y: scroll;
 }
 
 .authForm {
     position: relative;
+    top: 35%;
     padding: 15px;
     background: #fff;
     width: 800px;
-    margin: 300px auto;
+    margin: 0 auto;
     height: auto;
     display: flex;
     display: -webkit-flex;
