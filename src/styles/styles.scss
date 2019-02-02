@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,8 +12,14 @@ body, html {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   color: #666;
   max-width: 100%;
+  overflow-y: scroll;
   overflow-x: hidden;
   background: #ffaa00;
+}
+
+body.noscroll {
+  height: 100%;
+  overflow: hidden;
 }
 
 button {

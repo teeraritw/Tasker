@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import { db, auth } from '../config/firebaseConfig';
+import $ from 'jquery';
 
 Vue.use(Vuex);
 
@@ -70,6 +71,11 @@ const store = new Vuex.Store({
         },
         // Set current tab to anything
         updateCurrentTab(state, newTab) {
+            if (newTab == null) {
+                $('body').removeClass('noscroll');
+            } else {
+                $('body').addClass('noscroll');
+            }
             state.currentTab = newTab;
         },
         // Update auth status depending on auth
