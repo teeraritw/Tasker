@@ -1,7 +1,7 @@
 <template>
     <div id='addTodo' v-if='getLoggedInStatus'>
         <div id='addForm'>
-            <h2 class='header'>CREATE <span>YOUR</span> TODO</h2>
+            <h2 class='header'>CREATE YOUR TODO</h2>
 
             <p v-if='submitted'>Your todo has been created! You can check it out <router-link to='/todos' exact>here</router-link></p>
             
@@ -26,6 +26,7 @@
 <script>
 import { db } from '../../config/firebaseConfig';
 import { mapGetters } from 'vuex';
+import firebase from 'firebase';
 
 export default {
     data() {
@@ -46,8 +47,7 @@ export default {
                 title: this.todo.title,
                 description: this.todo.description,
                 author: this.getUserEmailName,
-                date: this.date.toLocaleTimeString('en-US') + ' - ' + this.date.toLocaleDateString('en-US'),
-                negativeTime: -(this.date.getTime())
+                date: firebase.firestore.FieldValue.serverTimestamp()
             });
             this.submitted = true;
         }
@@ -73,7 +73,7 @@ a {
     justify-content: center;
 }
 #addForm {
-    width: 960px;
+    width: 800px;
     background: #fff;
     padding: 20px;
 
@@ -101,19 +101,21 @@ a {
     label {
         text-align: left;
         display: block;
-        font-size: 20px;
+        font-size: 18px;
         margin: 0 0 10px 0;
     }
     input, textarea {
         width: 100%;
         display: block;
         padding: 10px;
-        border-radius: 15px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
 
-        -moz-transition: box-shadow 0.2s;
-        -webkit-transition: -webkit-box-shadow 0.2s;
-        -o-transition: box-shadow 0.2s;
-        transition: box-shadow 0.2s;
+        -moz-transition: box-shadow 0.1s;
+        -webkit-transition: -webkit-box-shadow 0.1s;
+        -o-transition: box-shadow 0.1s;
+        transition: box-shadow 0.1s;
     }
     input[type=text] {
         border: 0;
@@ -127,8 +129,8 @@ a {
         padding: 10px;
         font-family: Roboto, Arial, Helvetica, sans-serif;
         cursor: pointer;
-        font-size: 20px;
-        width: 150px;
+        font-size: 16px;
+        width: 130px;
 
         &:hover {
             background: #444;
@@ -147,14 +149,55 @@ ul {
 
 .header {
     text-align: center;
-    font-size: 35px;
-
-    span {
-        font-weight: bold;
-    }
+    font-size: 28px;
 }
 
 p {
     text-align: center;
+}
+
+@media screen and (max-width: 950px) {
+
+    h2.header {
+        font-size: 28px;
+    }
+
+    #addForm {
+
+        width: 80%;
+
+        form {
+            width: 400px;
+        }
+
+        button {
+            font-size: 16px;
+        }
+
+        label {
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 586px) {
+    #addForm {
+        width: 100%;
+        form {
+            width: 100%;
+        }
+
+        h2.header {
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        button {
+            font-size: 14px;
+        }
+    }
 }
 </style>

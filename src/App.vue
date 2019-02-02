@@ -19,6 +19,7 @@ import SignOut from './components/auth/SignOut.vue';
 import { mapGetters } from 'vuex';
 import styles from './styles/styles.scss';
 import authStyles from './styles/auth.scss';
+import todoStyles from './styles/todo.scss';
 
 export default {
   name: 'app',

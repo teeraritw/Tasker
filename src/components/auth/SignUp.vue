@@ -18,7 +18,7 @@
                     <input v-model='user.password' id='passwordInput' type='password' placeholder="Password" />
                 </li>
             </ul>
-            <button class='submitButton' id='signUpBtn'>GLAD TO MEET YOU!</button>
+            <button class='submitButton' id='signUpBtn'>SIGN UP</button>
         </form>
     </div>
 </template>
@@ -60,6 +60,6 @@ export default {
 
 <style scoped lang='scss'>
 #signUpBtn {
-  width: 200px;
+  width: 150px;
 }
 </style>

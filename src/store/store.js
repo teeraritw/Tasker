@@ -55,7 +55,7 @@ const store = new Vuex.Store({
     mutations: {
         // Update state.todos if the todos inside the database updates
         updateTodo(state) {
-            db.collection('todos').orderBy('negativeTime').onSnapshot(function (todos) {
+            db.collection('todos').orderBy('date', 'desc').onSnapshot(function (todos) {
                 var newTodos = [];
 
                 if (todos.docs.length > 0) {
@@ -63,8 +63,9 @@ const store = new Vuex.Store({
                         newTodos.push(doc.data());
                         newTodos[index].id = doc.id;
                     });
-                    state.todos = newTodos;
                 }
+
+                state.todos = newTodos;
             });
         },
         // Set current tab to anything
@@ -93,11 +94,19 @@ const store = new Vuex.Store({
 
                 state.notifications = newNotifications;
             });
+        },
+        // After todo has been deleted
+        deleteTodo(state) {
         }
     },
     actions: {
         updateTodo(context) {
             context.commit('updateTodo');
+        },
+        deleteTodo(context, todoId) {
+            db.collection('todos').doc(todoId).delete().then(() => {
+                context.commit('deleteTodo');
+            });
         },
         setCurrentTab(context, newTab) {
             context.commit('updateCurrentTab', newTab);

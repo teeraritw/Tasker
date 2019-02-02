@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import moment from 'moment';
 
 // Filters
 Vue.filter('snippet', function (val) {
@@ -15,4 +16,16 @@ Vue.filter('snippetTitle', function (val) {
     } else {
         return val;
     }
+});
+
+Vue.filter('fromNow', function(date) {
+    return moment(date).fromNow();
+});
+
+Vue.filter('toCalendar', function(date) {
+    return moment(date).calendar();
+});
+
+Vue.filter('formatToDate', function(date) {
+    return moment(date).format('LLL');
 });

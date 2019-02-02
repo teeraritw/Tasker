@@ -25,7 +25,7 @@ exports.projectCreated = functions.firestore.document('todos/{todosId}')
         const todo = doc.data();
         const notification = {
             content: 'added a new todo',
-            user: todo.author,
+            name: todo.author,
             time: time
         };
 
@@ -37,13 +37,31 @@ exports.projectCreated = functions.firestore.document('todos/{todosId}')
     return createNotification(notification);
 });
 
+exports.todoDeleted = functions.firestore.document('todos/{todosId}').onDelete((doc, event) => {
+    let eventId = event.eventId;
+    let time = admin.firestore.FieldValue.serverTimestamp();
+
+    // If the event is already running (avoid being triggered twice)
+    if (isAlreadyRunning(eventId)) { return false; }
+
+    const todo = doc.data();
+    const notification = {
+        content: 'has been deleted',
+        name: todo.title,
+        time: time
+    };
+
+    markAsRunning(eventId);
+    return createNotification(notification);
+});
+
 exports.userSignedUp = functions.auth.user().onCreate((user, event) => {
     let eventId = event.eventId;
     let time = admin.firestore.FieldValue.serverTimestamp();
 
     const notification = {
         content: 'just signed up',
-        user: user.email,
+        name: user.email,
         time: time
     };
 
