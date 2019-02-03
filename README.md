@@ -13,5 +13,5 @@
 5. **Built-in notifications** - Get notified globally on the dashboard whether someone signed up, or simply created their todos.
 
 ## Links
-*Sounds good. I want to try it out, **what's next?***
+*Sounds good. I want to try it out, **what's next?***  
 You can check out the website [here](https://tasker-2d87e.firebaseapp.com/).
