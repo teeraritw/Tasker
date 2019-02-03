@@ -1,5 +1,5 @@
 
-# WELCOME TO TASKER .
+# WELCOME TO TASKER
 
 <p align="center"><img width="300px" src="https://github.com/FesterTY/tasker/blob/master/src/assets/tasker_logo.png?raw=true"/></p>
 
