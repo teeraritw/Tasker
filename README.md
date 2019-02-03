@@ -1,8 +1,6 @@
 
-# WELCOME TO TASKER
-
 <p align="center"><img width="300px" src="https://github.com/FesterTY/tasker/blob/master/src/assets/tasker_logo.png?raw=true"/></p>
-
+<h2 align="center">Your new friend, Tasker</h3>
 <p align="center">Tasker is a simple single page application website used primarily to manage, and keep track of your todos. </p>
 
 ## Key Features
