@@ -3,6 +3,9 @@
 <h3 align="center">Your new friend, Tasker</h3>
 <p align="center">Tasker is a simple single page application website used primarily to manage, and keep track of your todos. </p>
 
+<img width="100%" alt="create todo page screenshot" src="https://i.imgur.com/kbwyogm.png">
+<p align="center"><img width="48%" alt="all todo page screenshot" src="https://i.imgur.com/nQDMdei.png"> <img width="48%" alt="homepage screenshot" src="https://i.imgur.com/VRHEUiD.png"></p>
+
 ## Key Features
 1. **The ability to keep track of your todos with a click of a button** - Want to add a todo? Bam. It's done. Or delete one? Bam. Destruction's done. 
 2. **Responsive Web Design** - Add your todos anywhere, and still have that same look, and feel of Tasker.
