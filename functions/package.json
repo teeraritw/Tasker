@@ -12,8 +12,8 @@
   "dependencies": {
     "@firebase/firestore": "^1.0.1",
     "firebase": "^5.8.1",
-    "firebase-admin": "^6.5.1",
-    "firebase-functions": "^2.1.0"
+    "firebase-admin": "^11.4.1",
+    "firebase-functions": "^4.1.1"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
